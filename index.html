@@ -18,13 +18,14 @@
 <body>
   <div id="app">
     <header>
-      <img src="./images/gitfav.svg" alt="GitFav Symbol"></img>
+      <img src="./images/gitfav.svg" alt="GitFav Symbol">
+
       <form class="search-bar">
         <label for="search-input" class="sr-only">Github User</label>
         <input type="text" id="search-input" placeholder="Github User">
         <button class="add-button">
           <img src="./images/github-logo.svg" alt="star symbol" width="24">
-          Favorites
+          Favorite
         </button>
       </form>
     </header>
@@ -38,6 +39,38 @@
           <th>Action</th>
         </tr>
       </thead>
+
+      <tbody>
+        <tr>
+          <td class="user">
+            <img src="https://www.github.com/pedro558.png" alt="github profile user image">
+            <a href="https://www.github.com/pedro558" target="_blank">
+              <p>Pedro Afonso</p>
+              <span>pedro558</span>
+            </a>
+          </td>
+          <td class="repositories">24</td>
+          <td class="followers">3</td>
+          <td class="remove-area">
+            <button class="remove">Remove</button>
+          </td>
+      </tr>
+
+      <tr>
+        <td class="user">
+          <img src="https://www.github.com/pedro558.png" alt="github profile user image">
+          <a href="https://www.github.com/pedro558" target="_blank">
+            <p>Pedro Afonso</p>
+            <span>pedro558</span>
+          </a>
+        </td>
+        <td class="repositories">24</td>
+        <td class="followers">3</td>
+        <td class="remove-area">
+          <button class="remove">Remove</button>
+        </td>
+    </tr>
+      </tbody>
     </table>
   </div>
 </body>
