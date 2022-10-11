@@ -103,7 +103,6 @@ header , .search-bar{
 table{
   width: 100%;
   border-collapse: collapse;
-  
   box-shadow: 1px 1px 20px #3e053d;
 }
 
@@ -115,6 +114,17 @@ table *{
 thead th{
   padding: 1.5rem;
   font-weight: 400;
+}
+
+thead th span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+thead th img{
+  height: 2rem;
 }
 
 th{
@@ -130,43 +140,43 @@ th:last-child{
 }
 
 /* Table rows */
-tr td{
+tbody tr td{
   color: var(--fc-table);
 
 }
-tr:nth-child(even){
+tbody tr:nth-child(even){
   background-color: rgb(137 182 201)
 }
 
-tr:nth-child(odd){
+tbody tr:nth-child(odd){
   background-color: rgb(255, 255, 255);;
 }
 
 /* Table data */
-tr td:first-child{
+tbody tr td:first-child{
   text-align: left;
 }
 
-td{
+tbody td{
   padding: 1.5rem;
   text-align: center;
 }
-td.user{
+tbody td.user{
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-td.user a{
+tbody td.user a{
   text-decoration: none;
   color: var(--fc-table);
 }
 
-td.user a p{
+tbody td.user a p{
   font-weight: bold;
 }
 
-td.user img{
+tbody td.user img{
   width: 5rem;
   height: 5rem;
   object-fit: cover;
