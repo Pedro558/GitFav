@@ -31,41 +31,57 @@
       </form>
     </header>
 
-    <table>
-      <thead>
-        <tr>
-          <th>
-            <span>
-              <img src="./images/user.svg" alt="user-img">
-              User
-            </span>
-            
-          </th>
-
-          <th>
-            <span>
-              <img src="./images/book-bold.svg" alt="book-img">
-              Repositories
-            </span>
-          </th>
-
-          <th>
-            <span>
-              <img src="./images/user-circle-plus.svg" alt="followers-symbol">
-              Followers
-            </span>
-          </th>
-
-          <th>
-            <span>
-              <img src="./images/gear-bold.svg" alt="gear-icon">
-              Actions
-            </span>
-          </th>
+    <div id="table-control">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <span>
+                <img src="./images/user.svg" alt="user-img">
+                User
+              </span>
+              
+            </th>
+  
+            <th>
+              <span>
+                <img src="./images/book-bold.svg" alt="book-img">
+                Repos
+              </span>
+            </th>
+  
+            <th>
+              <span>
+                <img src="./images/user-circle-plus.svg" alt="followers-symbol">
+                Followers
+              </span>
+            </th>
+  
+            <th>
+              <span>
+                <img src="./images/gear-bold.svg" alt="gear-icon">
+                Action
+              </span>
+            </th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr>
+            <td class="user">
+              <img src="https://www.github.com/pedro558.png" alt="github profile user image">
+              <a href="https://www.github.com/pedro558" target="_blank">
+                <p>Pedro Afonso</p>
+                <span>pedro558</span>
+              </a>
+            </td>
+            <td class="repositories">24</td>
+            <td class="followers">3</td>
+            <td class="remove-area">
+              <button class="remove">Remove</button>
+            </td>
         </tr>
-      </thead>
-
-      <tbody>
+  
         <tr>
           <td class="user">
             <img src="https://www.github.com/pedro558.png" alt="github profile user image">
@@ -80,23 +96,10 @@
             <button class="remove">Remove</button>
           </td>
       </tr>
-
-      <tr>
-        <td class="user">
-          <img src="https://www.github.com/pedro558.png" alt="github profile user image">
-          <a href="https://www.github.com/pedro558" target="_blank">
-            <p>Pedro Afonso</p>
-            <span>pedro558</span>
-          </a>
-        </td>
-        <td class="repositories">24</td>
-        <td class="followers">3</td>
-        <td class="remove-area">
-          <button class="remove">Remove</button>
-        </td>
-    </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
+    
   </div>
 </body>
 </html>

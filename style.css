@@ -23,7 +23,7 @@
 }
 
 body{
-  background: var(--bg-body);
+  background: var(--bg-body) no-repeat center/cover;
   color: var(--fc-text);
   min-width: 100vw;
   min-height: 100vh;
@@ -100,6 +100,11 @@ header , .search-bar{
 /*END HEADER*/
 
 /* TABLE */
+#table-control{
+  display: flex;
+  justify-content: center;
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -114,6 +119,7 @@ table *{
 thead th{
   padding: 1.5rem;
   font-weight: 400;
+  transition: padding 1s;
 }
 
 thead th span{
@@ -127,29 +133,31 @@ thead th img{
   height: 2rem;
 }
 
-th{
+thead th{
   background: var(--bg-th);
 }
 
-th:first-child{
+thead tr th:first-child{
   border-top-left-radius: .4rem;
 }
 
-th:last-child{
-  border-top-right-radius: .4rem;
+thead tr th:last-child{
+  border-top-left-radius: .4rem;
 }
 
 /* Table rows */
 tbody tr td{
   color: var(--fc-table);
+  padding: 1.5rem;
+  text-align: center;
 
 }
 tbody tr:nth-child(even){
-  background-color: rgb(137 182 201)
+  background-color: rgb(137 182 201);
 }
 
 tbody tr:nth-child(odd){
-  background-color: rgb(255, 255, 255);;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Table data */
@@ -157,14 +165,12 @@ tbody tr td:first-child{
   text-align: left;
 }
 
-tbody td{
-  padding: 1.5rem;
-  text-align: center;
-}
 tbody td.user{
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-direction: row;
+  transition: flex-direction 1s;
 }
 
 tbody td.user a{
@@ -190,4 +196,34 @@ tbody td.user img{
   font-weight: bold;
   color: #cd1111;
   cursor: pointer;
+}
+
+
+/* MEDIA QUERIES */ 
+@media (max-width: 620px){
+  thead th{
+    padding: 1rem 0.5rem;
+    transition: padding 1s;
+  }
+
+  thead th span{
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 420px){
+  tbody td.user{
+    flex-direction: column;
+    transition: flex-direction 1s;
+  }
+  
+  tbody tr td{
+    padding: 0.8rem;
+    transition: padding 1s;
+  }
+  
+  tbody tr td:first-child {
+    text-align: center;
+  }
+
 }
