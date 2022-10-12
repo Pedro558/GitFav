@@ -20,6 +20,7 @@
   
   --bg-th: #093a6c;
   --bg-body: linear-gradient(120deg, rgba(8,5,60,1) 0%, rgba(5,5,59,1) 26%, rgba(10,56,112,1) 70%, rgba(106,23,179,1) 93%);
+  --bg-error: #df2626;
 }
 
 body{
@@ -27,11 +28,23 @@ body{
   color: var(--fc-text);
   min-width: 100vw;
   min-height: 100vh;
+  font-family: var(--ff-primary);
 }
 
-body *{
-  font-size: var(--fs-primary);
-  font-family: var(--ff-primary);
+.error{
+  position: absolute;
+  background-color: var(--bg-error);
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: var(--fs-secondary);
+  color: var(--fc-text);
+  padding: .8rem 0;
+  visibility: visible;
+  opacity: 1;
+  /*transform: translateY(-30px);
+  transition: transform .5s*/
 }
 
 .sr-only{
@@ -47,9 +60,12 @@ body *{
 }
 
 #app{
-  max-width:80vw;
-  margin: 0 auto;
-  padding: 2rem;
+  
+  display: flex;
+  padding: 5rem 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* HEADER */
@@ -91,6 +107,7 @@ header{
   width: clamp(10rem, 10rem + 20vw, 15rem);
   height: 4.8rem;
   font-weight: 500;
+  font-size: var(--fs-primary);
   color: var(--fc-text);
 }
 
@@ -103,6 +120,7 @@ header , .search-bar{
 #table-control{
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 table{
