@@ -296,14 +296,23 @@ tbody td.user-wrapper img{
 /* END TABLE */
 
 /* Actions */
-.actions-wrapper{
+.actions, .actions *, .actions-wrapper{
   display: flex;
+}
+
+.actions, .actions-wrapper{
   flex-direction: column;
+}
+
+.actions-wrapper{
   align-items: center;
 }
 
+.actions{
+  gap: 2px;
+}
+
 .actions *{
-  display: flex;
   align-items: center;
   gap: 8px;
 }
