@@ -21,11 +21,16 @@
   --fs-small: 1.4rem;
   
   --bg-th: #093a6c;
-  --bg-body: linear-gradient(120deg, rgba(8,5,60,1) 0%, rgba(5,5,59,1) 26%, rgba(10,56,112,1) 70%, rgba(106,23,179,1) 93%);
+  --bg-body: linear-gradient(120deg, #08053c 0%, #05053b 25%, #0a3870 70%, #6a17b3 90%);
   --bg-error: #df2626;
   --bg-wrapper: #fff;
   --bg-even: #c7d9db;
   --bg-odd: #fff;
+  --bg-scrollbar: radial-gradient(circle, rgba(19,72,228,1) 0%, rgba(180,92,178,1) 100%);
+}
+
+html{
+  background: rgba(5,5,59,1);
 }
 
 body{
@@ -196,6 +201,7 @@ header , .search-bar{
 #table-control{
   display: flex;
   justify-content: center;
+  width: 80%;
   overflow-y: scroll;
 }
 
@@ -224,20 +230,17 @@ thead th span{
   gap: 5px;
 }
 
+.user-head{
+  justify-content: flex-start;
+  padding-left: 5px;
+}
+
 thead th img{
   height: 2rem;
 }
 
 thead th{
   background: var(--bg-th);
-}
-
-thead tr th:first-child{
-  border-top-left-radius: .4rem;
-}
-
-thead tr th:last-child{
-  border-top-left-radius: .4rem;
 }
 
 /* Table rows */
@@ -340,9 +343,38 @@ tbody td.user-wrapper .user:hover{
   filter: brightness(1.6);
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block-start: 5em;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background: var(--bg-scrollbar);
+}
+
+
+
+/* Scrollbar support */
+@supports (scrollbar-color: red blue){
+  *{
+    scrollbar-color: #1348e4 transparent;
+    
+  }
+}
+
 
 /* MEDIA QUERIES */ 
-@media (max-width: 620px){
+@media (max-width: 650px){
+  #table-control{
+    width: auto;
+  }
+  
   thead th{
     padding: 1rem 0.5rem;
     transition: padding 1s;
