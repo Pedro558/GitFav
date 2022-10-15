@@ -244,12 +244,7 @@ thead th img{
   height: 2rem;
 }
 
-
-/* Table rows */
-table tbody{
-  border: 2px solid #3aacce;
-}
-
+/* No-user */
 tbody .no-user-wrapper{
   background-color: #05053b;
   height: 50vh;
@@ -257,10 +252,10 @@ tbody .no-user-wrapper{
 
 tbody .no-user-content{
   display: flex;
-    gap: 20px;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 tbody .no-user-text{
@@ -271,6 +266,11 @@ tbody .no-user-text{
 tbody .no-user-content img{
   height: 20vh;
   width: 20vw;
+}
+
+/* Table rows */
+table tbody{
+  border: 2px solid #3aacce;
 }
 
 tbody tr.body-row td{
@@ -291,8 +291,6 @@ tbody tr.body-row:nth-child(odd){
 tbody tr td.body-row:first-child{
   text-align: left;
 }
-
-
 
 tbody td.user-wrapper .user{
   display: flex;
@@ -432,6 +430,10 @@ tbody td.user-wrapper .user:hover{
   ::-webkit-scrollbar-track {
     margin-block-start: 6.3em;
   }
+
+  tbody .no-user-wrapper {
+    height: 40vh;
+}
 }
 
 @media (max-width: 420px){
