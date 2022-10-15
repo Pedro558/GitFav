@@ -14,7 +14,7 @@
   --fc-green: #2ea650;
   --fc-visit: #15602a;
   --fc-twitter: #0a5876;
-  --fc-search-input: #525558;
+  --fc-gray: #525558;
   
   --fs-secondary: 1.6rem;
   --fs-primary: 2rem;
@@ -171,7 +171,7 @@ header{
   height: 4.8rem;
   border-radius: 5px;
   border: none;
-  color: var(--fc-search-input);
+  color: var(--fc-gray);
   font-size: var(--fs-secondary);
 }
 
@@ -203,6 +203,7 @@ header , .search-bar{
   justify-content: center;
   width: 80%;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 table{
@@ -246,25 +247,48 @@ thead th img{
 
 /* Table rows */
 table tbody{
-  border: 1px solid #3aacce;
+  border: 2px solid #3aacce;
 }
 
-tbody tr td{
+tbody .no-user-wrapper{
+  background-color: #05053b;
+  height: 50vh;
+}
+
+tbody .no-user-content{
+  display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+tbody .no-user-text{
+  color: var(--fc-gray);
+  font-size: clamp(1.4rem, 1rem + 5vw, 4rem);
+}
+
+tbody .no-user-content img{
+  height: 20vh;
+  width: 20vw;
+}
+
+tbody tr.body-row td{
   color: var(--fc-table);
   padding: 8px;
   text-align: center;
 }
 
-tbody tr:nth-child(even){
+tbody tr.body-row:nth-child(even){
   background-color: var(--bg-even);
 }
 
-tbody tr:nth-child(odd){
+tbody tr.body-row:nth-child(odd){
   background-color: var(--bg-odd);
 }
 
 /* Table data */
-tbody tr td:first-child{
+tbody tr td.body-row:first-child{
   text-align: left;
 }
 
@@ -435,5 +459,18 @@ tbody td.user-wrapper .user:hover{
   tbody tr td:first-child {
     text-align: center;
   }
+
+  tbody tr.body-row td {
+    padding: 2px;
+}
+
+tbody .no-user-content{
+  flex-direction: column;
+  gap: 0;
+}
+
+tbody .no-user-wrapper {
+  height: 30vh;
+}
 
 }
