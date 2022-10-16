@@ -1,4 +1,5 @@
-import {addButton, error, modalAdded, searchInput} from "./elements.js"
+import { CreateRow } from "./createRow.js"
+import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput, twitter} from "./elements.js"
 import { GetOutModal } from "./getOutModal.js"
 
 export class GithubUser{
@@ -94,5 +95,42 @@ export class FavoritesView extends Favorites{
       this.addUser(searchInput.value.toLowerCase())
     }
   }
-  
+
+
+  update(){
+    this.removeAllTr()
+
+    this.inputs.forEach( user => {
+      const row = CreateRow()
+
+      row.querySelector('.user img').src = `https://github.com/${user.login}.png`
+      row.querySelector('.user img').alt = `Imagem de ${user.name}`
+      row.querySelector('.user a').href = `https://github.com/${user.login}`
+      row.querySelector('.user p').textContent = user.name
+      row.querySelector('.user span').textContent = user.login
+      row.querySelector('.repositories').textContent = user.public_repos
+      row.querySelector('.followers').textContent = user.followers
+      row.querySelector('.visit').href = `https://github.com/${user.login}`
+
+      if(user.twitter_username != null){
+        row.querySelector('.twitter').href = `https://www.twitter.com/${user.twitter_username}`
+
+        twitter.style.visibility = "visible";
+      }
+
+      row.querySelector('.remove').onclick = () => {
+        modalAdded.classList.add('open-modal')
+
+        confirmRemove.onclick = () => {
+          this.delete(user)
+          GetOutModal()
+        }
+
+        cancelRemove.onclick = () => {
+          GetOutModal()
+        }
+      }
+
+    })
+  }
 }

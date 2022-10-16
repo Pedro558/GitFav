@@ -360,6 +360,7 @@ tbody td.user-wrapper img{
 }
 
 .twitter{
+  visibility: hidden;
   color: var(--fc-twitter);
 }
 

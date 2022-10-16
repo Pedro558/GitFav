@@ -17,22 +17,22 @@ export function CreateRow(){
     <td class="followers">3</td>
     <td class="actions-wrapper">
       <div class="actions">
-        <a href="">
-          <button class="visit">
+        <a class="visit" href="" >
+          <button>
             <img src="./images/git-pull-request-bold.svg" alt="git pull request symbol">
             <span>Visit</span>
           </button>
         </a>
 
-        <a href="">
-          <button class="twitter">
+        <a class="twitter" href="">
+          <button>
             <img src="./images/twitter-logo-bold.svg" alt="twitter logo">
             <span>Twitter</span>
           </button>
         </a>
 
-        <a href="">
-          <button class="remove">
+        <a class="remove" href="">
+          <button>
             <img src="./images/trash-bold.svg" alt="trash symbol">
             <span>Remove</span>
           </button>
