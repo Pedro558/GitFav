@@ -65,4 +65,13 @@ export class Favorites{
       console.log(error.message);
     }
   }
+
+  delete(user){
+    const filterItems = this.inputs.filter(
+      input => user.login !== input.login
+      )
+    this.inputs = filterItems
+    this.update()
+    this.saveLocally()
+  }
 }
