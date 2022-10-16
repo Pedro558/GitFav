@@ -1,4 +1,3 @@
-// Class that takes data from Github's API
 export class GithubUser{
   static async search(username){
     const endpoint = `https://api.github.com/users/${username}`
@@ -16,55 +15,54 @@ export class GithubUser{
   }
 }
 
-// How the data will be structured
 export class Favorites{
   constructor(root){
     this.root = document.querySelector(root)
     this.load()
   }
 
-  // load what is already saved in localStorage
   load(){
     this.inputs = JSON.parse(localStorage.getItem('@github-favorites:')) || []
   }
 
-  // save data into localStorage
   saveLocally(){
     localStorage.setItem('@github-favorites:', JSON.stringify(this.inputs))
   }
 
-  // dealing with data when a new user is added 
   async addUser(username){
     const error = document.querySelector('.error')
+    const modalAdded = document.querySelector('.modal-added')
     
     try{
-      // map the users already in the list
       const loginNames = this.inputs.map(user => {
         return user.login.toLowerCase()
       })
 
-      // check if a user is already in the list
       for(let i = 0; i < loginNames.length; i++){
         if(username == loginNames[i]){
-          error.classList.add('open')
+          error.classList.add('open-error')
           error.firstElementChild.innerHTML = 'User already added'
         }
       }
 
-      // load API's data into a const
       const user = await GithubUser.search(username)
 
-      // check if the user is find
       if(user.login === undefined){
-        error.classList.add('open')
+        error.classList.add('open-error')
         error.firstElementChild.innerHTML = 'User not find'
       }
 
-      // remove error message from the screen
-      error.classList.remove('open')
-
+      error.classList.remove('open-error')
       
+      this.inputs = [user, ...this.inputs]
+      this.update()
+      this.saveLocally()
 
+  
+      modalAdded.classList.add('open-modal')
+
+    } catch(error){
+      console.log(error.message);
     }
   }
 }
