@@ -1,4 +1,4 @@
-import {error, modalAdded} from "./elements.js"
+import {addButton, error, modalAdded, searchInput} from "./elements.js"
 import { GetOutModal } from "./getOutModal.js"
 
 export class GithubUser{
@@ -75,4 +75,24 @@ export class Favorites{
     this.update()
     this.saveLocally()
   }
+}
+
+export class FavoritesView extends Favorites{
+  constructor(root){
+    super(root)
+    this.tbody = this.root.querySelector('table tbody')
+
+    this.update()
+    this.grabUser()
+  }
+
+  grabUser(){
+    addButton.onclick = () =>{
+      const event = window.event
+      event.preventDefault()
+
+      this.addUser(searchInput.value.toLowerCase())
+    }
+  }
+  
 }
