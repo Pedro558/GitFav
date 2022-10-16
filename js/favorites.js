@@ -1,3 +1,6 @@
+import {error, modalAdded} from "./elements.js"
+import { GetOutModal } from "./getOutModal.js"
+
 export class GithubUser{
   static async search(username){
     const endpoint = `https://api.github.com/users/${username}`
@@ -30,9 +33,6 @@ export class Favorites{
   }
 
   async addUser(username){
-    const error = document.querySelector('.error')
-    const modalAdded = document.querySelector('.modal-added')
-    
     try{
       const loginNames = this.inputs.map(user => {
         return user.login.toLowerCase()
@@ -60,6 +60,7 @@ export class Favorites{
 
   
       modalAdded.classList.add('open-modal')
+      GetOutModal()
 
     } catch(error){
       console.log(error.message);
