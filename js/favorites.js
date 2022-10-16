@@ -1,5 +1,5 @@
 import { CreateRow } from "./createRow.js"
-import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput, twitter} from "./elements.js"
+import {addButton, cancelRemove, confirmRemove, error, modalAdded, searchInput} from "./elements.js"
 import { GetOutModal } from "./getOutModal.js"
 
 export class GithubUser{
@@ -113,7 +113,9 @@ export class FavoritesView extends Favorites{
       row.querySelector('.visit').href = `https://github.com/${user.login}`
 
       if(user.twitter_username != null){
-        row.querySelector('.twitter').href = `https://www.twitter.com/${user.twitter_username}`
+        const twitter = row.querySelector('.twitter')
+
+        twitter.href = `https://www.twitter.com/${user.twitter_username}`
 
         twitter.style.visibility = "visible";
       }
@@ -131,6 +133,15 @@ export class FavoritesView extends Favorites{
         }
       }
 
+      this.tbody.append(row)
     })
   }
+
+  removeAllTr(){
+    this.tbody.querySelectorAll('tr')
+    .forEach(tr =>{
+      tr.remove()
+    })
+  }
+
 }
