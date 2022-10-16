@@ -58,7 +58,7 @@ body{
   transition: transform 1s, font-size 1s;
 }
 
-.open{
+.open-error{
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
@@ -92,6 +92,10 @@ body{
 .modal-remove button{
   border: none;
   background: transparent;
+}
+
+.open-modal{
+  display: block;
 }
 
 .modal-content{
