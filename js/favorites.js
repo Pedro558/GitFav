@@ -1,5 +1,5 @@
 import { CreateRow } from "./createRow.js"
-import {addButton, cancelRemove, confirmRemove, error, modalAdded, searchInput} from "./elements.js"
+import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput} from "./elements.js"
 import { GetOutModal } from "./getOutModal.js"
 
 export class GithubUser{
@@ -43,6 +43,7 @@ export class Favorites{
         if(username == loginNames[i]){
           error.classList.add('open-error')
           error.firstElementChild.innerHTML = 'User already added'
+          throw new Error('User already added')
         }
       }
 
@@ -51,6 +52,7 @@ export class Favorites{
       if(user.login === undefined){
         error.classList.add('open-error')
         error.firstElementChild.innerHTML = 'User not find'
+        throw new Error('User not find')
       }
 
       error.classList.remove('open-error')
@@ -64,7 +66,7 @@ export class Favorites{
       GetOutModal()
 
     } catch(error){
-      console.log(error.message);
+      console.log(error);
     }
   }
 
@@ -102,7 +104,8 @@ export class FavoritesView extends Favorites{
 
     this.inputs.forEach( user => {
       const row = CreateRow()
-
+      
+      row.classList.add('body-row')
       row.querySelector('.user img').src = `https://github.com/${user.login}.png`
       row.querySelector('.user img').alt = `Imagem de ${user.name}`
       row.querySelector('.user a').href = `https://github.com/${user.login}`
@@ -120,12 +123,13 @@ export class FavoritesView extends Favorites{
         twitter.style.visibility = "visible";
       }
 
-      row.querySelector('.remove').onclick = () => {
-        modalAdded.classList.add('open-modal')
+      row.querySelector('.remove').onclick = (e) => {
+        e.preventDefault()
+        modalRemove.classList.add('open-modal')
 
         confirmRemove.onclick = () => {
           this.delete(user)
-          GetOutModal()
+          modalRemove.classList.remove('open-modal')
         }
 
         cancelRemove.onclick = () => {

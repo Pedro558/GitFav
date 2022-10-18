@@ -2,7 +2,7 @@ export function CreateRow(){
   const tr = document.createElement('tr')
 
   tr.innerHTML = `
-  <tr class="body-row">
+  <tr>
     <td class="user-wrapper">
       <div class="user">
         <img src="https://www.github.com/pedro558.png" alt="github profile user image">

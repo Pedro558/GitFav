@@ -92,6 +92,11 @@ body{
 .modal-remove button{
   border: none;
   background: transparent;
+  cursor: pointer;
+}
+
+.modal-remove button:hover{
+  filter: brightness(1.75);
 }
 
 .open-modal{
@@ -206,7 +211,7 @@ header , .search-bar{
   display: flex;
   justify-content: center;
   width: 80%;
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
@@ -316,6 +321,7 @@ tbody td.user-wrapper .user a p{
 tbody td.user-wrapper img{
   width: 5rem;
   height: 5rem;
+  border-radius: 50%;
   object-fit: cover;
   align-self: center;
 }
