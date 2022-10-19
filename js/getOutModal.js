@@ -1,23 +1,22 @@
-import { modal, modalAdded, modalRemove, closeBtn, cancelRemove, confirmRemove} from "./elements.js"
+import {  modal, modalAdded, modalRemove, closeBtn, cancelRemove, confirmRemove} from "./elements.js"
 
 export function GetOutModal(){
-  closeBtn.addEventListener('click', () => {
-    modalAdded.classList.remove('open-modal')
-    modalRemove.classList.remove('open-modal')
-  })
+  closeBtn.onclick = () => {
+    //modalRemove.classList.remove('open-modal')
+    console.log('click');
+  }
 
   cancelRemove.addEventListener('click', () =>{
     modalRemove.classList.remove('open-modal')
   })
 
   confirmRemove.addEventListener('click', () =>{
-    modalAdded.classList.remove('open-modal')
+    modalRemove.classList.remove('open-modal')
   })
 
   window.addEventListener('click', (e)=>{
     if (e.target == modal){
-      modalAdded.classList.remove('open-modal')
-      modalRemove.classList.remove('open-modal')
+      modal.classList.remove('open-modal')
     }
   })
 

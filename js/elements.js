@@ -1,8 +1,8 @@
-const modal = document.getElementById('myModal')
+const modal = document.querySelector('.modal')
 const modalAdded = document.querySelector('.modal-added')
 const modalRemove = document.querySelector('.modal-remove')
 
-const closeBtn = document.querySelector('#myModal .close')
+const closeBtn = document.querySelectorAll('.close')
 const addButton = document.querySelector('.add-button')
 const error = document.querySelector('.error')
 

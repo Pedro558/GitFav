@@ -120,22 +120,23 @@ export class FavoritesView extends Favorites{
 
         twitter.href = `https://www.twitter.com/${user.twitter_username}`
 
-        twitter.style.visibility = "visible";
+        twitter.style.display = "block";
       }
 
-      row.querySelector('.remove').onclick = (e) => {
+      row.querySelector('.remove').
+      addEventListener('click', (e) =>{
         e.preventDefault()
         modalRemove.classList.add('open-modal')
 
-        confirmRemove.onclick = () => {
+        confirmRemove.addEventListener('click', () => {
           this.delete(user)
-          modalRemove.classList.remove('open-modal')
-        }
-
+          GetOutModal()
+        }) 
+        
         cancelRemove.onclick = () => {
           GetOutModal()
         }
-      }
+      })
 
       this.tbody.append(row)
     })

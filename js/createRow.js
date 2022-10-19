@@ -31,7 +31,7 @@ export function CreateRow(){
           </button>
         </a>
 
-        <a class="remove" href="">
+        <a class="remove">
           <button>
             <img src="./images/trash-bold.svg" alt="trash symbol">
             <span>Remove</span>

@@ -77,7 +77,7 @@ body{
 }
 
 /* Modal */
-.modal-added, .modal-remove{
+.modal{
   display: none;
   position: fixed; 
   z-index: 1;
@@ -93,10 +93,6 @@ body{
   border: none;
   background: transparent;
   cursor: pointer;
-}
-
-.modal-remove button:hover{
-  filter: brightness(1.75);
 }
 
 .open-modal{
@@ -122,6 +118,7 @@ body{
 
 .modal-content .close{
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .modal-content .modal-text{
@@ -199,6 +196,7 @@ header{
   font-size: var(--fs-primary);
   color: var(--fc-text);
   transition: font-size 1s;
+  letter-spacing: 0.5px;
 }
 
 header , .search-bar{
@@ -211,7 +209,7 @@ header , .search-bar{
   display: flex;
   justify-content: center;
   width: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -303,7 +301,7 @@ tbody tr td.body-row:first-child{
 
 tbody td.user-wrapper .user{
   display: flex;
-  align-items: baseline;
+  align-items: center;
   transition: flex-direction 1s;
   padding-top: 3px;
 }
@@ -311,7 +309,8 @@ tbody td.user-wrapper .user{
 tbody td.user-wrapper .user a{
   text-decoration: none;
   color: var(--fc-table);
-  padding: 5px;
+  padding: 7px;
+  text-align: left;
 }
 
 tbody td.user-wrapper .user a p{
@@ -330,13 +329,14 @@ tbody td.user-wrapper img{
 /* Actions */
 .actions, .actions *, .actions-wrapper{
   display: flex;
+  text-decoration: none;
 }
 
 .actions, .actions-wrapper{
   flex-direction: column;
 }
 
-.actions-wrapper{
+.actions-wrapper, .actions *{
   align-items: center;
 }
 
@@ -345,7 +345,6 @@ tbody td.user-wrapper img{
 }
 
 .actions *{
-  align-items: center;
   gap: 8px;
 }
 
@@ -357,16 +356,19 @@ tbody td.user-wrapper img{
   font-weight: bold;
 }
 
-.remove{
+.remove span{
   color: var(--fc-remove);
 }
 
-.visit{
+.visit span{
   color: var(--fc-visit);
 }
 
 .twitter{
-  visibility: hidden;
+  display: none;
+}
+
+.twitter span{
   color: var(--fc-twitter);
 }
 
@@ -382,8 +384,16 @@ tbody td.user-wrapper .user:hover{
   filter: drop-shadow(2px 4px 6px rgba(10,56,112,1));
 }
 
-.remove:hover, .visit:hover, .twitter:hover{
+.remove:hover,
+.visit:hover,
+.twitter:hover,
+.modal-remove button:hover
+{
   filter: brightness(1.6);
+}
+
+.add-button:hover{
+  filter: brightness(1.1)
 }
 
 /* Scrollbar */
@@ -462,6 +472,10 @@ tbody td.user-wrapper .user:hover{
 
   tbody td.user-wrapper .user{
     flex-direction: column;
+  }
+
+  tbody td.user-wrapper .user a{
+    text-align: center;
   }
   
   tbody tr td{
