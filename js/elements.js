@@ -1,3 +1,5 @@
+const tbody = document.querySelector('tbody')
+
 const modal = document.querySelector('.modal')
 const modalAdded = document.querySelector('.modal-added')
 const modalRemove = document.querySelector('.modal-remove')
@@ -20,5 +22,6 @@ export{
   searchInput,
   modalRemove,
   confirmRemove,
-  cancelRemove
+  cancelRemove,
+  tbody
 }

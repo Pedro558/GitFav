@@ -18,7 +18,7 @@
   
   --fs-secondary: 1.6rem;
   --fs-primary: 2rem;
-  --fs-small: 1.4rem;
+  --fs-small: 1.2rem;
   
   --bg-thead: #0b2766;
   --bg-body: linear-gradient(120deg, #08053c 0%, #05053b 25%, #0a3870 70%, #6a17b3 90%);
@@ -78,21 +78,18 @@ body{
 
 /* Modal */
 .modal{
-  display: none;
-  position: fixed; 
-  z-index: 1;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  background-color: rgba(0,0,0,0.0);
+  border: none;
+}
+
+.modal::backdrop{
   background-color: rgba(0,0,0,0.4);
 }
 
-.modal-remove button{
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.close{
+  font-size: 20px;
 }
 
 .open-modal{
@@ -373,7 +370,7 @@ tbody td.user-wrapper img{
 }
 
 /* remove background */
-.remove, .actions button{
+.remove, .actions button, .close, .modal-remove button{
   background: none;
   border: none;
   cursor: pointer;
@@ -476,6 +473,7 @@ tbody td.user-wrapper .user:hover{
 
   tbody td.user-wrapper .user a{
     text-align: center;
+    padding: 0;
   }
   
   tbody tr td{

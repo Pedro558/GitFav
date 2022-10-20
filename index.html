@@ -17,44 +17,40 @@
   <script src="./js/script.js" type="module" defer></script>
 </head>
 <body>
-  <!-- error -->
     <div class="error">
       <p>Error message</p>
     </div>
-  <!-- error -->
 
   <div id="app">
-
-    <!-- Modal Added -->
-    <div class="modal modal-added">
+     <dialog class="modal modal-added">
       <div class="modal-content">
-        <span class="close">&times</span>
+        <button class="close">&times</button>
         <p class="modal-text added">
           <span>User added sucessfully!</span>
           <img src="./images/check-circle-bold.svg" alt="check-symbol">
         </p>
       </div>
-    </div>
-    <!-- End modal added -->
+     </dialog>
 
-    <!-- Modal Remove-->
-    <div class="modal modal-remove">
+    <dialog class="modal modal-remove">
       <div class="modal-content">
-        <span class="close">&times</span>
+        <button class="close">&times</button>
+        
         <div class="modal-text remove-area">
           <span>Are you sure ?</span>
           <div class="remove-options">
             <button class="confirm-remove">
               <img src="./images/check-circle-bold.svg" alt="check-symbol">
             </button>
+
             <button class="cancel-remove">
               <img src="./images/x-circle-bold.svg" alt="cancel-symbol">
             </button>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Modal Remove -->
+    </dialog>
+
 
     <header>
       <img src="./images/gitfav.svg" alt="GitFav Symbol">

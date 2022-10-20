@@ -1,6 +1,6 @@
 import { CreateRow } from "./createRow.js"
-import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput} from "./elements.js"
-import { GetOutModal } from "./getOutModal.js"
+import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput, closeBtn, tbody} from "./elements.js"
+
 
 export class GithubUser{
   static async search(username){
@@ -61,9 +61,11 @@ export class Favorites{
       this.update()
       this.saveLocally()
 
-  
-      modalAdded.classList.add('open-modal')
-      GetOutModal()
+      modalAdded.showModal()
+      closeBtn[0].onclick = () =>{
+        modalAdded.close()
+      }
+      
 
     } catch(error){
       console.log(error);
@@ -126,15 +128,19 @@ export class FavoritesView extends Favorites{
       row.querySelector('.remove').
       addEventListener('click', (e) =>{
         e.preventDefault()
-        modalRemove.classList.add('open-modal')
+        modalRemove.showModal()
 
         confirmRemove.addEventListener('click', () => {
           this.delete(user)
-          GetOutModal()
+          modalRemove.close()
         }) 
         
         cancelRemove.onclick = () => {
-          GetOutModal()
+          modalRemove.close()
+        }
+
+        closeBtn[1].onclick = () =>{
+          modalRemove.close()
         }
       })
 
@@ -148,5 +154,20 @@ export class FavoritesView extends Favorites{
       tr.remove()
     })
   }
+
+  /*noUser(){
+      const tr = document.createElement('tr')
+      tr.classList.add('no-user-wrapper')
+  
+      tr.innerHTML = `
+      <td colspan="4">
+      <div class="no-user-content">
+        <img src="./images/big-star.svg" alt="big star image">
+        <span class="no-user-text">No favorite yet</span>
+      </div>
+    </td>
+      `
+      return tr
+  }*/
 
 }
