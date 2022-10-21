@@ -46,7 +46,7 @@ You can check the original design here:
 
 ## 🎥 Video Demo
 
-🚀 You can check the deploy [here](https://www.pedro558.github.io/GitFav/)
+🚀 You can check the deploy [here](https://pedro558.github.io/GitFav/)
 
 https://user-images.githubusercontent.com/40730261/197197426-5505bb80-d83f-4371-80c3-076998f45ff5.mp4
 
