@@ -35,7 +35,7 @@
     <dialog class="modal modal-remove">
       <div class="modal-content">
         <button class="close">&times</button>
-        
+
         <div class="modal-text remove-area">
           <span>Are you sure ?</span>
           <div class="remove-options">
@@ -98,8 +98,18 @@
             </th>
           </tr>
         </thead>
-        
-        <tbody></tbody>
+        <tbody class="no-user">
+          <tr class="no-user-wrapper">
+            <td colspan="4">
+              <div class="no-user-content">
+                <img src="./images/big-star.svg" alt="big star image">
+                <span class="no-user-text">No favorite yet</span>
+              </div>
+            </td>
+          </tr>     
+        </tbody>
+
+        <tbody class="users"></tbody>
       </table>
     </div>
     

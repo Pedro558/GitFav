@@ -1,5 +1,5 @@
 import { CreateRow } from "./createRow.js"
-import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput, closeBtn, tbody} from "./elements.js"
+import {addButton, cancelRemove, confirmRemove, error, modalAdded, modalRemove, searchInput, closeBtn} from "./elements.js"
 
 
 export class GithubUser{
@@ -26,7 +26,7 @@ export class Favorites{
   }
 
   load(){
-    this.inputs = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+    this.inputs = JSON.parse(localStorage.getItem('@github-favorites:')) || [] 
   }
 
   saveLocally(){
@@ -85,7 +85,7 @@ export class Favorites{
 export class FavoritesView extends Favorites{
   constructor(root){
     super(root)
-    this.tbody = this.root.querySelector('table tbody')
+    this.tbody = this.root.querySelector('table .users')
 
     this.update()
     this.grabUser()
@@ -103,6 +103,7 @@ export class FavoritesView extends Favorites{
 
   update(){
     this.removeAllTr()
+    this.verifyUsers()
 
     this.inputs.forEach( user => {
       const row = CreateRow()
@@ -155,19 +156,10 @@ export class FavoritesView extends Favorites{
     })
   }
 
-  /*noUser(){
-      const tr = document.createElement('tr')
-      tr.classList.add('no-user-wrapper')
-  
-      tr.innerHTML = `
-      <td colspan="4">
-      <div class="no-user-content">
-        <img src="./images/big-star.svg" alt="big star image">
-        <span class="no-user-text">No favorite yet</span>
-      </div>
-    </td>
-      `
-      return tr
-  }*/
+  verifyUsers(){
+    const noUser = this.root.querySelector('table .no-user')
+         
+        this.inputs.length == 0 ? noUser.classList.remove('hidden') : noUser.classList.add('hidden')
+  }
 
 }

@@ -249,6 +249,12 @@ thead th img{
 }
 
 /* No-user */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
 tbody .no-user-wrapper{
   background-color: #05053b;
   height: 50vh;
@@ -273,13 +279,10 @@ tbody .no-user-content img{
 }
 
 /* Table rows */
-table tbody{
-  border: 2px solid #5610a7;
-}
-
 tbody tr.body-row td{
   color: var(--fc-table);
   padding: 8px;
+  margin-top: 10px;
   text-align: center;
 }
 
