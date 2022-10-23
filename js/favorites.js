@@ -134,10 +134,12 @@ export class FavoritesView extends Favorites{
         confirmRemove.addEventListener('click', () => {
           this.delete(user)
           modalRemove.close()
+          error.classList.remove('open-error')
         }) 
         
         cancelRemove.onclick = () => {
           modalRemove.close()
+          error.classList.remove('open-error')
         }
 
         closeBtn[1].onclick = () =>{
