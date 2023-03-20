@@ -33,22 +33,27 @@ You can check the original design here:
 ## 🎨 Layout
 
 > ### 💻 Desktop
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/40730261/197189960-019d8e67-b1d8-49c9-ac1f-43acdf4e845e.png" alt="mobile project version" height="570">
-  <img src="https://user-images.githubusercontent.com/40730261/197189790-ebba8bca-f0cc-41a0-ba7a-4ac5c22f45a4.png" alt="mobile project version" height="570">
+<p>
+  👉 <a href="https://user-images.githubusercontent.com/40730261/197189960-019d8e67-b1d8-49c9-ac1f-43acdf4e845e.png">Check here the desktop layout with data.</a>
+  
+  👉 <a href="https://user-images.githubusercontent.com/40730261/197189790-ebba8bca-f0cc-41a0-ba7a-4ac5c22f45a4.png">Check here the desktop layout without data</a>
 </p>
 
 > ### 📱 Mobile
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/40730261/197189176-177503e2-5624-44fe-aa92-88dcb0a52b35.png" alt="mobile project version" height="570" width="400">
-  <img src="https://user-images.githubusercontent.com/40730261/197189355-1dce1069-1faf-44c0-8f64-014db5d3efa5.png" alt="mobile project version" height="570" width="400">
+<p>
+  👉 <a href=""https://user-images.githubusercontent.com/40730261/197189176-177503e2-5624-44fe-aa92-88dcb0a52b35.png">Check here the mobile layout with data<a/>
+  
+  👉 <a href="https://user-images.githubusercontent.com/40730261/197189355-1dce1069-1faf-44c0-8f64-014db5d3efa5.png">Check here the mobile layout without data</a>
 </p>
 
 ## 🎥 Video Demo
 
 🚀 You can check the deploy [here](https://pedro558.github.io/GitFav/)
 
-https://user-images.githubusercontent.com/40730261/197197426-5505bb80-d83f-4371-80c3-076998f45ff5.mp4
+<p>
+🎥 <a href="https://user-images.githubusercontent.com/40730261/197197426-5505bb80-d83f-4371-80c3-076998f45ff5.mp4" type="video/mp4"> You can check here a video demo</a>
+</p>
+
 
 ## 🛠 Technologies
 <div align="center"><br/>
